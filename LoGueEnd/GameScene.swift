@@ -95,7 +95,6 @@ class GameScene: SKScene {
             heartsPlayer2.append(childNode(withName: "heart2_\(i+1)") as! SKSpriteNode)
         }
         
-        
         //checking haptic condition
         if CHHapticEngine.capabilitiesForHardware().supportsHaptics {
             do {
@@ -105,6 +104,9 @@ class GameScene: SKScene {
                 print("Haptic Engine Initialization Failed: \(error)")
             }
         }
+        
+        //stop the music background
+        BackgroundMusicManager.shared.stopBackgroundMusic()
         
     }
     
